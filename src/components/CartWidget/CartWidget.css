@@ -1,0 +1,12 @@
+.shopping-cart-mobile{
+    display:none;
+}
+
+@media(max-width:768px) {
+    .shopping-cart {
+        display: none;
+    }
+    .shopping-cart-mobile{
+        display:block;
+    }
+}

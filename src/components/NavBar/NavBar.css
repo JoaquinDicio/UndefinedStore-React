@@ -1,0 +1,33 @@
+.navbar{
+    min-height: 70px;
+}
+.navbar .container-fluid{
+    width: 80%;
+}
+.navbar .container-fluid .navbar-brand{
+    font-weight: bold;
+    color: black;
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.navbar-collapse ul{
+    align-items: center;
+    font-weight: 500;
+
+}
+.navbar-collapse ul a{
+    color: black;
+}
+.navbar-collapse ul a:hover{
+    color: blue;
+    transition: .3s;
+}
+.navbar.toggler{
+    color: grey;
+}
+@media (max-width:768px) {
+    .navbar .container-fluid{
+        width: 90%;
+    }
+}
