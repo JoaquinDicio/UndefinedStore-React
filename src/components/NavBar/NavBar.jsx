@@ -1,7 +1,9 @@
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
+import {useState} from 'react'
 
-function NavBar({ pages }) {
+function NavBar({ pages}) {
+    
     return (
         <>
             <nav className="navbar navbar-expand-md bg-light">

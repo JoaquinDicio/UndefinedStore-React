@@ -1,12 +1,10 @@
 import './ItemListContainer.css'
+import ItemCount from '../ItemCount/ItemCount'
 
-function ItemListContainer({ greetings,subtitle }) {
+function ItemListContainer({}) {
     return (
         <main className="container-fluid">
-            <div className="list-container d-flex flex-column justify-content-center align-items-center">
-                <h2 className="text-center">{greetings}</h2>
-                <p className='text-center'>{subtitle}</p>
-            </div>
+            <ItemCount currentStock={12}></ItemCount>
         </main>
     )
 }
