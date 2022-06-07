@@ -1,19 +1,13 @@
 import './ItemListContainer.css'
 import ItemCount from '../ItemCount/ItemCount'
-import {useState} from 'react'
 
 function ItemListContainer({}) {
-    let [x,setX]=useState(1)
-
-    function onSubstract(){
-        setX(x-1)
-    }
-    function onAdd(){
-        setX(x+1)
+    function onAdd(x){
+        alert('Comprado '+x+' unidades del producto')
     }
     return (
         <main className="container-fluid">
-            <ItemCount currentStock={12} onAdd={onAdd} onSubstract={onSubstract} x={x}></ItemCount>
+            <ItemCount currentStock={12} onAdd={onAdd} init={2}></ItemCount>
         </main>
     )
 }
