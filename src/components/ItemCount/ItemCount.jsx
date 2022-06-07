@@ -1,18 +1,8 @@
 import Button from "../Button/Button.jsx"
-import {useState} from 'react'
 import './ItemCount.css'
-import NavBar from "../NavBar/NavBar.jsx"
 
-export default function ItemCount({currentStock}){
-    let [x,setX]=useState(1)
-
-    function onSubstract(){
-        setX(x-1)
-    }
-    function onAdd(){
-        setX(x+1)
-    }
-
+export default function ItemCount({currentStock,onAdd,onSubstract,x}){
+    
     return(
         <div className="row justify-content-center container itemCount">
             <h5 className="text-center">Cantidad</h5>
