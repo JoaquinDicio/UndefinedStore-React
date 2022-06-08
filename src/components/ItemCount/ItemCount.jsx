@@ -2,11 +2,9 @@ import Button from "../Button/Button.jsx"
 import './ItemCount.css'
 import {useState,useEffect} from 'react'
 
-export default function ItemCount({currentStock,onAdd,init}){
+export default function ItemCount({currentStock,onAdd}){
     let [x,setX]=useState(1)
-    useEffect(()=>{
-        setX(init)
-    },[])
+
     function onSubstract(){
         setX(x-1)
     }
