@@ -1,11 +1,35 @@
 import './ItemListContainer.css'
+import ItemList from '../ItemList/ItemList';
 
-function ItemListContainer({ greetings,subtitle }) {
+function ItemListContainer() {
+    function onAdd(x) {
+        alert('Comprado ' + x + ' unidades del producto')
+    }
+    const products = new Promise((res, rej) => {
+        setTimeout(() => {
+            res(
+                [{
+                    id: 1, title: 'Mouse Genius', description: 'mouse clasico color negro, sensor laser', price: '1200', pictureURL: 'https://www.venex.com.ar/products_images/1526482059_m100gallery1.png'
+                }, {
+                    id: 2, title: 'Teclado y mouse', description: 'Combo teclado+mouse marca logitech', price: '2500', pictureURL: 'https://http2.mlstatic.com/D_NQ_NP_976914-MLA48498254472_122021-O.webp'
+                }, {
+                    id: 3, title: 'Auriculares JBL', description: 'auriculares in-ear inalambricos', price: '8200', pictureURL: 'https://http2.mlstatic.com/D_NQ_NP_875020-MLA47919581799_102021-O.webp'
+                }, {
+                    id: 4, title: 'Producto', description: 'descripcion breve', price: '1200', pictureURL: ''
+                }, {
+                    id: 5, title: 'Producto', description: 'descripcion breve', price: '1200', pictureURL: ''
+                }, {
+                    id: 6, title: 'Producto', description: 'descripcion breve', price: '1200', pictureURL: ''
+                }]
+            )
+        }, 2000);
+    })
+
+
     return (
         <main className="container-fluid">
-            <div className="list-container d-flex flex-column justify-content-center align-items-center">
-                <h2 className="text-center">{greetings}</h2>
-                <p className='text-center'>{subtitle}</p>
+            <div className='row justify-content-center itemListContainer'>
+                <ItemList promise={products} />
             </div>
         </main>
     )

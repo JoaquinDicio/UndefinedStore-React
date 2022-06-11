@@ -1,0 +1,26 @@
+.item{
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.030);
+    background-color: #ffff;
+    padding: 15px;
+    padding-bottom: 30px;
+    margin: 5px 5px;
+    border-radius: 5px;
+    height: 300px;
+}
+.item .imgContainer{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    height: 90px;
+}
+.item .foot h4{
+    font-weight: 600;
+}
+.item .foot p{
+    font-size: 12px;
+    padding: 0 20px;
+}
+.item .imgContainer img{
+    min-width:10vw;
+    overflow: hidden;
+}
