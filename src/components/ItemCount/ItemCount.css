@@ -1,7 +1,6 @@
 .itemCount{
-    width: 250px;
+    min-width: 200px;
     margin: 0 auto;
-    margin-top: 150px;
 }
 .item-count-info{
     margin-bottom: 10px;
@@ -11,4 +10,7 @@
 }
 .item-count-info h5{
     padding-top: 5px;
+}
+.addToCartBtn{
+    font-size: 14px;
 }
