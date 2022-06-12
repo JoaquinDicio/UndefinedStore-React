@@ -1,11 +1,16 @@
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
+import {useEffect,useState} from 'react'
 
 function ItemListContainer() {
     function onAdd(x) {
         alert('Comprado ' + x + ' unidades del producto')
     }
-    const products = new Promise((res, rej) => {
+//crea el array de productos
+let [productList, setproductList] = useState([])
+//crea la promesa
+useEffect(()=>{
+    const promise = new Promise((res, rej) => {
         setTimeout(() => {
             res(
                 [{
@@ -22,16 +27,23 @@ function ItemListContainer() {
                     id: 6, title: 'Producto', description: 'descripcion breve', price: '1200', pictureURL: ''
                 }]
             )
-        }, 2000);
+            //lama la promesa
+            promiseCall(promise)
+        }, 2000);  
     })
-
-
-    return (
-        <main className="container-fluid">
-            <div className='row justify-content-center itemListContainer'>
-                <ItemList promise={products} />
-            </div>
-        </main>
+},[])
+function promiseCall(promise){
+    promise.then(
+    (productsArray)=>setproductList(productsArray)
     )
 }
+return (
+    <main className="container-fluid">
+        <div className='row justify-content-center itemListContainer'>
+            <ItemList products={productList}></ItemList>
+        </div>
+    </main>
+)
+}
+
 export default ItemListContainer
