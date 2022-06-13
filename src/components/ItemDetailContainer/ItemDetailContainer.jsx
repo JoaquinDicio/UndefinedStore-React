@@ -1,8 +1,10 @@
 import './ItemDetailContainer.css'
 import {useState,useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import {useParams} from 'react-router-dom'
 
-export default function ItemDetailContainer({itemID}) {
+export default function ItemDetailContainer({}) {
+  const{id}=useParams()
   let [item,setItem]=useState({})
 
   function getItem(){
@@ -12,11 +14,10 @@ export default function ItemDetailContainer({itemID}) {
         (data)=> {
           setItem(
             data.find(
-              (producto)=>producto.id===itemID
+              (producto)=>producto.id===id
             )
           )
-        },
-        console.log(item)
+        }
       )
       .catch(
         (error)=>console.log(error)

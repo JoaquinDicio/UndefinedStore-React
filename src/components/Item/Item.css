@@ -24,3 +24,7 @@
     min-width:10vw;
     overflow: hidden;
 }
+.item a{
+    width: 100%;
+    text-align: center;
+}

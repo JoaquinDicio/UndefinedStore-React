@@ -23,8 +23,8 @@
     color: blue;
     transition: .3s;
 }
-.navbar.toggler{
-    color: grey;
+.navbar-toggler{
+    width: fit-content;
 }
 @media (max-width:768px) {
     .navbar .container-fluid{
