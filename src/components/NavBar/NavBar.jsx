@@ -1,6 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
-import { useState } from 'react'
+import {Link} from 'react-router-dom'
+import ItemListContainer from '../ItemListContainer/ItemListContainer'
 
 function NavBar() {
 
@@ -23,6 +24,7 @@ function NavBar() {
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Todos</a></li>
+                                    <li><Link to='categoria/1'><a class="dropdown-item" href="#">Combos</a></Link></li>
                                     <li><a class="dropdown-item" href="#">Auriculares</a></li>
                                     <li><a class="dropdown-item" href="#">Teclados</a></li>
                                 </ul>
