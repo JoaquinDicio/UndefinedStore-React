@@ -1,7 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
-import {Link} from 'react-router-dom'
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import { Link } from 'react-router-dom'
+
 
 function NavBar() {
 
@@ -9,24 +9,25 @@ function NavBar() {
         <>
             <nav className="navbar navbar-expand-md bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">UndefinedStore</a>
+                    <Link to='/home' className="navbar-brand">UndefinedStore</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fa-solid fa-bars toggler"></i>
                     </button>
                     <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
                         <ul className="navbar-nav d-flex justify-content-center">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Home</a>
+                                <Link className='nav-link' to='/home'>Home</Link>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Productos
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Todos</a></li>
-                                    <li><Link to='categoria/1'><a class="dropdown-item" href="#">Combos</a></Link></li>
-                                    <li><a class="dropdown-item" href="#">Auriculares</a></li>
-                                    <li><a class="dropdown-item" href="#">Teclados</a></li>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><Link className="dropdown-item" to='/home'>Todos</Link></li>
+                                    <li><Link className="dropdown-item" to='/categoria/1'>Combos</Link></li>
+                                    <li><Link className="dropdown-item" to='/categoria/2'>Auriculares</Link></li>
+                                    <li><Link className="dropdown-item" to='/categoria/3'>Teclados</Link></li>
+                                    <li><Link className="dropdown-item" to='/categoria/4'>Mouses</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">

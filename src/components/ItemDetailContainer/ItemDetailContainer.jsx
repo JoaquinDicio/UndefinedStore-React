@@ -8,7 +8,7 @@ export default function ItemDetailContainer({}) {
   let [item,setItem]=useState({})
 
   function getItem(){
-    fetch('https://mocki.io/v1/5e8f133f-04e1-4a1e-96d8-52b442a08e1b')
+    fetch('https://mocki.io/v1/7e9aaccb-9677-46d3-9df4-93c684233a87')
       .then((res)=>res.json())
       .then(
         (data)=> {
