@@ -1,17 +1,23 @@
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
-
+import {HiMenuAlt3} from 'react-icons/hi'
+import {useContext,useState,useEffect} from 'react'
+import { CartContext } from '../../context/CartContext'
 
 function NavBar() {
-
+    let {getLenght,cart}=useContext(CartContext)
+    let[itemsQty,setItemsQty]=useState(0)
+    useEffect(()=>{
+        setItemsQty(getLenght)
+    },[cart])
     return (
         <>
             <nav className="navbar navbar-expand-md bg-light">
                 <div className="container-fluid">
                     <Link to='/home' className="navbar-brand">UndefinedStore</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <i className="fa-solid fa-bars toggler"></i>
+                    <HiMenuAlt3 className='menu'/>  
                     </button>
                     <div className="collapse navbar-collapse justify-content-around" id="navbarNav">
                         <ul className="navbar-nav d-flex justify-content-center">
@@ -33,10 +39,10 @@ function NavBar() {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Carrito</a>
                             </li>
-                            <CartWidget items={4} version={'shopping-cart-mobile'} />
+                            <CartWidget items={itemsQty} version={'shopping-cart-mobile'} />
                         </ul>
                     </div>
-                    <CartWidget items={4} version={'shopping-cart'} />
+                    <CartWidget items={itemsQty} version={'shopping-cart'} />
                 </div>
             </nav>
         </>

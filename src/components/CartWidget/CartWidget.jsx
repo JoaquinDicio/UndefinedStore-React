@@ -1,11 +1,12 @@
 import './CartWidget.css'
+import {FaShoppingCart} from 'react-icons/fa'
 
 function CartWidget({version,items }) {
     return (
         <>
             <div className={version}>
-            <i className="fa-solid fa-cart-shopping"></i>
-            <span>{items}</span>
+            <FaShoppingCart className='icon'/>
+            <span className='items'>{items}</span>
             </div>  
         </>
 

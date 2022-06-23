@@ -1,6 +1,12 @@
 .shopping-cart-mobile{
     display:none;
 }
+.icon{
+    font-size: 1.3em;
+}
+.items{
+    font-weight: bold;
+}
 
 @media(max-width:768px) {
     .shopping-cart {
@@ -8,5 +14,8 @@
     }
     .shopping-cart-mobile{
         display:block;
+    }
+    .icon{
+        font-size: 1.1em;
     }
 }

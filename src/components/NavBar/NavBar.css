@@ -26,6 +26,9 @@
 .navbar-toggler{
     width: fit-content;
 }
+.menu{
+    font-size: 1.3em;
+}
 @media (max-width:768px) {
     .navbar .container-fluid{
         width: 90%;

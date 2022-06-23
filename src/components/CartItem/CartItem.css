@@ -1,0 +1,18 @@
+.cartItem{
+    background-color: #ffff;
+    padding: 10px;
+    min-height: 100px;
+    margin: 10px auto;
+    max-width:1000px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.cartItem .img{
+    width: 15vw;
+    max-height: 90px;
+    max-width: 110px;
+}
+.btn-danger{
+    width: fit-content;
+    font-size: 1em;
+}

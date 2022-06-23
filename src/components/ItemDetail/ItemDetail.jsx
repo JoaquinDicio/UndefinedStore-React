@@ -1,22 +1,28 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import Button from "../Button/Button";
 import {Link} from 'react-router-dom'
+import { CartContext } from "../../context/CartContext";
+import { useEffect } from "react";
 
 export default function ItemDetail({ item }) {
   let [qty, setQty] = useState(0);
-  let [inCart, setInCart] = useState(false);
+  let {addItem}=useContext(CartContext) //call the cartContext
+  let [inCart,setInCart]=useState(false)
 
   function onAdd(qty) {
+    addItem(item,qty);
     setInCart(true);
-  }
+  }//add a new item to the cart
+
   function onSubstract() {
     setQty(qty - 1);
-  }
+  }//decrease the qty
+
   function onSum() {
     setQty(qty + 1);
-  }
+  }//increase the qty
 
   return (
     <div className="product-div container d-flex flex-column align-items-center justify-content-center">
