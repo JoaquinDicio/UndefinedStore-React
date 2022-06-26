@@ -10,10 +10,10 @@ export default function CartItem({ item }) {
     <>
       <div className="cartItem row align-items-center justify-content-center">
         <img className="col-4 img" src={item.pictureURL} alt={item.title} />
-        <h5 className="text-center col-3">{item.title}</h5>
-        <h5 className="text-center col-1">x{item.quantity}</h5>
-        <h5 className="text-center col-3">${item.price*item.quantity}</h5>
-        <button onClick={()=>deleteItem(item.id)} className="btn btn-danger text-center col-1">Borrar<TiDelete/></button>
+        <h5 className="text-center col-sm-3">{item.title}</h5>
+        <h5 className="text-center col-sm-1">x{item.quantity}</h5>
+        <h5 className="text-center col-sm-3">${item.price*item.quantity}</h5>
+        <button onClick={()=>deleteItem(item.id)} className="btn btn-danger text-center col-sm-1">Borrar<TiDelete/></button>
       </div>
     </>
   );

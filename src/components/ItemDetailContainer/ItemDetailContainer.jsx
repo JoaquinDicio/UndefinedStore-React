@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 
 export default function ItemDetailContainer({}) {
   const{id}=useParams()
-  let [item,setItem]=useState({})
+  let [item,setItem]=useState(false)
 
   function getItem(){
     fetch('https://mocki.io/v1/19b324bc-1a05-4684-8645-d9a9bc366e98')

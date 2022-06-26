@@ -12,7 +12,7 @@ export default function ItemCount({currentStock,onAdd,onSum,onSubstract,qty,setQ
                 <h5 className="col text-center">{qty}</h5>
                 <Button clicked={qty<currentStock?onSum:()=>alert('No hay mas unidades de este producto')} text={'+'} btnStyle={'btn btn-success col-3 text-center'}/>
             </div>
-            <Button clicked={()=>onAdd(qty)} text={'Agregar al carrito'} btnStyle={'btn btn-primary addToCartBtn'}/>
+            <Button clicked={qty>0?()=>onAdd(qty):''} text={'Agregar al carrito'} btnStyle={'btn btn-primary addToCartBtn'}/>
         </div>
     )
 }

@@ -11,8 +11,23 @@
     width: 15vw;
     max-height: 90px;
     max-width: 110px;
+    
 }
-.btn-danger{
+.cartItem .btn-danger{
     width: fit-content;
     font-size: 1em;
+}
+@media (max-width:525px) {
+    .cartItem{
+        display: flex;
+        flex-direction: row;
+    }
+    .cartItem .img{
+        width: 60vw;
+        max-width: none;
+        max-height: none;
+    }
+    .cartItem .btn-danger{
+        width: 100%;
+    }
 }

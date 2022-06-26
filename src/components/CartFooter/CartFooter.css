@@ -5,3 +5,19 @@
     margin: 15px auto;
     max-width: 1000px;
 }
+.emptyCart{
+    height: auto;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 15px auto;
+}
+@media (max-width:525px){
+    .footerCart{
+        display: flex;
+        flex-direction: column;
+    }
+    .footerCart h3{
+        text-align: center;
+    }
+}

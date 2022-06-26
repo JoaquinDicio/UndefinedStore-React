@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import {Link} from 'react-router-dom'
 import { CartContext } from "../../context/CartContext";
 import { useEffect } from "react";
+import Loader from "../Loader/Loader";
 
 export default function ItemDetail({ item }) {
   let [qty, setQty] = useState(0);
@@ -25,7 +26,8 @@ export default function ItemDetail({ item }) {
   }//increase the qty
 
   return (
-    <div className="product-div container d-flex flex-column align-items-center justify-content-center">
+    !item? <Loader/> :
+    (<div className="product-div container d-flex flex-column align-items-center justify-content-center">
       <div className="main-info row justify-content-center">
         <div className="col-md-8 productImg">
           <img src={item.pictureURL} alt={item.title} />
@@ -50,6 +52,6 @@ export default function ItemDetail({ item }) {
           )}
         </div>
       </div>
-    </div>
+    </div>)
   );
 }

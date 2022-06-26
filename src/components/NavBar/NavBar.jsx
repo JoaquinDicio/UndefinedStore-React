@@ -37,12 +37,24 @@ function NavBar() {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Carrito</a>
+                                <Link to={'/cart'} className='nav-link'>Carrito</Link>
                             </li>
-                            <CartWidget items={itemsQty} version={'shopping-cart-mobile'} />
+                            {
+                                itemsQty>0?
+                                <CartWidget items={itemsQty} version={'shopping-cart-mobile'} />
+                                :
+                                <></>
+                            }
+                            
                         </ul>
                     </div>
-                    <CartWidget items={itemsQty} version={'shopping-cart'} />
+                    {
+                        itemsQty>0?
+                        <CartWidget items={itemsQty} version={'shopping-cart'} />
+                        :
+                        <></>
+                    }
+                    
                 </div>
             </nav>
         </>
