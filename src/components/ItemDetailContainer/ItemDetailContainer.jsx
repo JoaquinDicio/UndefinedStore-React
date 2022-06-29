@@ -8,22 +8,6 @@ import {getDoc,doc,fireStore, getFirestore} from 'firebase/firestore'
 export default function ItemDetailContainer({}) {
   const{id}=useParams()
   let [item,setItem]=useState(false)
-  // function getItem(){
-  //   fetch('https://mocki.io/v1/19b324bc-1a05-4684-8645-d9a9bc366e98')
-  //     .then((res)=>res.json())
-  //     .then(
-  //       (data)=> {
-  //         setItem(
-  //           data.find(
-  //             (producto)=>producto.id===parseInt(id)
-  //           )
-  //         )
-  //       }
-  //     )
-  //     .catch(
-  //       (error)=>console.log(error)
-  //     )
-  // }
   useEffect(()=>{
     //getting db
     const app = initializeApp({apiKey: "AIzaSyCZq9CI2pgCdfGGSIEArzjPnCtTFLCOM78",
