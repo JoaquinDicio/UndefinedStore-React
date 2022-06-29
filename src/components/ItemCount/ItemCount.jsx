@@ -2,7 +2,7 @@ import Button from "../Button/Button.jsx"
 import './ItemCount.css'
 
 
-export default function ItemCount({currentStock,onAdd,onSum,onSubstract,qty,setQty}){
+export default function ItemCount({currentStock,onAdd,onSum,onSubstract,qty}){
     
     return(
         <div className="row justify-content-center container itemCount">

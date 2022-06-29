@@ -3,7 +3,7 @@
    padding: 70px 40px; 
    border-radius: 5px;
    margin: 100px auto;
-   max-width: 900px;
+   max-width: 1100px;
 }
 .product-div .main-info .productImg{
     overflow: hidden;
@@ -11,12 +11,15 @@
     justify-content: center;
 }
 .product-div .main-info .productImg img{
-    width:80vw;
-    max-width: 700px;
+    width: 15vw;
+    max-height:30vw;
 }
 .product-div .main-info .text h3.price{
     font-weight: bold;
 }
 .product-div .main-info .text{
     max-width: 300px;
+}
+.main-info{
+    width: 100%;
 }

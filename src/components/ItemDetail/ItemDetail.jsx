@@ -4,7 +4,6 @@ import { useState,useContext } from "react";
 import Button from "../Button/Button";
 import {Link} from 'react-router-dom'
 import { CartContext } from "../../context/CartContext";
-import { useEffect } from "react";
 import Loader from "../Loader/Loader";
 
 export default function ItemDetail({ item }) {
@@ -27,12 +26,12 @@ export default function ItemDetail({ item }) {
 
   return (
     !item? <Loader/> :
-    (<div className="product-div container d-flex flex-column align-items-center justify-content-center">
-      <div className="main-info row justify-content-center">
-        <div className="col-md-8 productImg">
+    (<div className="product-div d-flex flex-column">
+      <div className="main-info row align-items-center">
+        <div className="col-md-7 productImg">
           <img src={item.pictureURL} alt={item.title} />
         </div>
-        <div className="col-md-4 text">
+        <div className="col-md-5 text d-flex flex-column align-items-center">
           <h3 className="text-center">{item.title}</h3>
           <p className="text-center">{item.description}</p>
           <h3 className="text-center price">${item.price}</h3>

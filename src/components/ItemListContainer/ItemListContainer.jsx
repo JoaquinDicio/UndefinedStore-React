@@ -2,48 +2,60 @@ import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import {useEffect,useState} from 'react'
 import { Link, useParams } from 'react-router-dom';
+import { initializeApp} from "firebase/app";
+import {query,collection,getDocs,getFirestore, where} from 'firebase/firestore'
 
 function ItemListContainer() {
-//crea el array de productos
-let [productList, setproductList] = useState([])
-//setea los parametros de la url
-const {id}=useParams()
-//crea la promesa
+    //setting url params
+    const {id}=useParams()
+    //creates the items array
+    let [productList, setproductList] = useState([])
+    let [data,setData]=useState([])
+    //initializing firebase
+    const app = initializeApp({apiKey: "AIzaSyCZq9CI2pgCdfGGSIEArzjPnCtTFLCOM78",
+    authDomain: "undefinedstore-575bf.firebaseapp.com",
+    projectId: "undefinedstore-575bf",
+    storageBucket: "undefinedstore-575bf.appspot.com",
+    messagingSenderId: "38806740107",
+    appId: "1:38806740107:web:8ecc2fa19953a1f922488e"});
+
 useEffect(()=>{
-    fetch('https://mocki.io/v1/7e9aaccb-9677-46d3-9df4-93c684233a87')
-    .then(
-        (res)=>res.json()
-    )
-    .then(
-        (data)=>
-        checkCategoria(data)
-    )
-    .catch(
-        (error)=>console.log(error)
-    )
-},[id])
-//chequea la categoria seleccionada
-function checkCategoria(data){
+    //getting the database
+    const db=getFirestore()
+    //getting a collection from firebase
+    const productos=collection(db,'ItemCollection')
+    getDocs(productos).then((res)=>(
+        setData(res.docs.map((doc)=>(
+            {id:doc.id,...doc.data()} //iterates
+        )))
+    ))
+},[])
+useEffect(()=>{
+    checkCategoria()
+},[id,data])
+
+//check and filter the array
+function checkCategoria(){
     if(id){
+        let db=getFirestore()
         if(id==1){
-            filterList(data,"combos")
+            filterList(db,'combos')
         }else if(id==2){
-            filterList(data,"auriculares")
+            filterList(db,'auriculares')
         }else if(id==3){
-            filterList(data,"teclados")
+            filterList(db,'teclados')
         }else if(id==4){
-            filterList(data,"mouse")
+            filterList(db,'mouse')
         }
     }else{
         setproductList(data)
     }
 }
-//filtra los productos
-function filterList(data,category){
-    setproductList(
-        data.filter((producto)=>
-            producto.category==category)
-    )
+function filterList(db,category){
+    let newCollection=query(collection(db,'ItemCollection'),where('category','==',category))
+    getDocs(newCollection).then((res)=>setproductList(res.docs.map((item)=>(
+        {id:item.id,...item.data()}
+    ))))
 }
 return (
     <main className="container-fluid">
