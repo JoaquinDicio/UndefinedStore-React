@@ -8,12 +8,11 @@ export default function () {
     let {emptyCart,getTotalBuy}=useContext(CartContext)
     let totalBuy=getTotalBuy()
   
-  
   return(
     totalBuy>0?
       <div className='container footerCart d-flex row justify-content-around bg-light align-items-center'>
       <h3 className='col-sm-4'>TOTAL ${totalBuy}</h3>
-      <button className='col-sm-3 btn btn-success'>Terminar compra</button>
+      <Link to={'/checkout'}><button className='col-sm-3 btn btn-success'>Terminar compra</button></Link>
       </div>
     :
     <div className='container emptyCart d-flex flex-column justify-content-around bg-light align-items-center'>

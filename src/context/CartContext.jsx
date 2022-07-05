@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 import Item from "../components/Item/Item";
 export const CartContext = createContext(); //creates the cart context
@@ -23,7 +23,6 @@ export default function MyContext({ children }) {
 
   function isInCart(id) {
     let boolean = cart.some((item) => item.id == id);
-    console.log(boolean);
     return boolean;
   } //verifies if the item is in the cart, returns boolean
 

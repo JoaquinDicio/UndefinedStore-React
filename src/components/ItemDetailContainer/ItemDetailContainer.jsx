@@ -10,14 +10,7 @@ export default function ItemDetailContainer({}) {
   let [item,setItem]=useState(false)
   useEffect(()=>{
     //getting db
-    const app = initializeApp({apiKey: "AIzaSyCZq9CI2pgCdfGGSIEArzjPnCtTFLCOM78",
-    authDomain: "undefinedstore-575bf.firebaseapp.com",
-    projectId: "undefinedstore-575bf",
-    storageBucket: "undefinedstore-575bf.appspot.com",
-    messagingSenderId: "38806740107",
-    appId: "1:38806740107:web:8ecc2fa19953a1f922488e"});
     let db=getFirestore()
-
     let document=doc(db,'ItemCollection',id)
     getDoc(document).then((item)=>
     (setItem({...item.data(),id:item.id})))

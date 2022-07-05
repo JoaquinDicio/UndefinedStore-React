@@ -11,13 +11,6 @@ function ItemListContainer() {
     //creates the items array
     let [productList, setproductList] = useState([])
     let [data,setData]=useState([])
-    //initializing firebase
-    const app = initializeApp({apiKey: "AIzaSyCZq9CI2pgCdfGGSIEArzjPnCtTFLCOM78",
-    authDomain: "undefinedstore-575bf.firebaseapp.com",
-    projectId: "undefinedstore-575bf",
-    storageBucket: "undefinedstore-575bf.appspot.com",
-    messagingSenderId: "38806740107",
-    appId: "1:38806740107:web:8ecc2fa19953a1f922488e"});
 
 useEffect(()=>{
     //getting the database
