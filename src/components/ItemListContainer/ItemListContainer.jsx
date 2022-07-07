@@ -1,9 +1,9 @@
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import {useEffect,useState} from 'react'
-import { Link, useParams } from 'react-router-dom';
-import { initializeApp} from "firebase/app";
+import { useParams } from 'react-router-dom';
 import {query,collection,getDocs,getFirestore, where} from 'firebase/firestore'
+import SearchBar from '../SearchBar/SearchBar';
 
 function ItemListContainer() {
     //setting url params
@@ -11,6 +11,8 @@ function ItemListContainer() {
     //creates the items array
     let [productList, setproductList] = useState([])
     let [data,setData]=useState([])
+    //search state
+    let [search,setSearch]=useState('')
 
 useEffect(()=>{
     //getting the database
@@ -50,8 +52,17 @@ function filterList(db,category){
         {id:item.id,...item.data()}
     ))))
 }
+//search items using the search bar
+function searchItem(input){
+    setproductList(
+        data.filter((item)=>
+            item.title.toLowerCase().includes(input.toLowerCase())
+        )
+    )
+}
 return (
     <main className="container-fluid">
+        <SearchBar searchItem={searchItem}/>
         <div className='row justify-content-center itemListContainer'>
             <ItemList products={productList}></ItemList>
         </div>

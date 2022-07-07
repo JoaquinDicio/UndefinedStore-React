@@ -23,3 +23,12 @@
 .main-info{
     width: 100%;
 }
+
+@media (max-width:768px) {
+    .product-div .main-info .text {
+        max-width: none;
+    }
+    .product-div .main-info .productImg img{
+        width: 35vw;
+    }
+}

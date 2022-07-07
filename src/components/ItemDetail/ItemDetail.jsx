@@ -26,12 +26,12 @@ export default function ItemDetail({ item }) {
 
   return (
     !item? <Loader/> :
-    (<div className="product-div d-flex flex-column">
+    (<div className="product-div d-flex flex-column align-items-center">
       <div className="main-info row align-items-center">
-        <div className="col-md-7 productImg">
+        <div className="col-sm-7 productImg">
           <img src={item.pictureURL} alt={item.title} />
         </div>
-        <div className="col-md-5 text d-flex flex-column align-items-center">
+        <div className="col-sm-5 text d-flex flex-column align-items-center">
           <h3 className="text-center">{item.title}</h3>
           <p className="text-center">{item.description}</p>
           <h3 className="text-center price">${item.price}</h3>

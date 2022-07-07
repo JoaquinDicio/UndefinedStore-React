@@ -12,7 +12,7 @@ export default function () {
     totalBuy>0?
       <div className='container footerCart d-flex row justify-content-around bg-light align-items-center'>
       <h3 className='col-sm-4'>TOTAL ${totalBuy}</h3>
-      <Link to={'/checkout'}><button className='col-sm-3 btn btn-success'>Terminar compra</button></Link>
+      <Link className='col-sm-3' to={'/checkout'}><button className='btn btn-success'>Terminar compra</button></Link>
       </div>
     :
     <div className='container emptyCart d-flex flex-column justify-content-around bg-light align-items-center'>
