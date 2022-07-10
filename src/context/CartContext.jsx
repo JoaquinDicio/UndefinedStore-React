@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
-import Item from "../components/Item/Item";
 export const CartContext = createContext(); //creates the cart context
 
 const { Provider } = CartContext; // destructuring the attribute provider of care Context
 
 export default function MyContext({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')));
+  //updates the local storage in every change
+  useEffect(()=>{
+    localStorage.setItem('cart',JSON.stringify(cart))
+  },[cart])
 
   function addItem(item, quantity) {
     if (isInCart(item.id) == false) {

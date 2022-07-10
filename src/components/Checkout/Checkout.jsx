@@ -31,7 +31,7 @@ export default function Checkout() {
         date: Date(),
         total: total,
       };
-      addDoc(orderCollection, order).then(({ id }) => console.log(id));
+      addDoc(orderCollection, order);
     }
   }
   function showError(msg){
@@ -84,26 +84,26 @@ export default function Checkout() {
             <h2 className="text-center">Compra terminada</h2>
           </div>
           <div className="row">
-            <b className="col">Nombre:</b><p className="col">{name}</p>
-            <b className="col">Telefono:</b><p className="col">{cel}</p>
-            <b className="col">Mail:</b><p className="col">{email}</p>
+            <b className="col-md">Nombre:</b><p className="col">{name}</p>
+            <b className="col-md">Telefono:</b><p className="col">{cel}</p>
+            <b className="col-md">Mail:</b><p className="col">{email}</p>
           </div>
           <div className="checkout-items">
             {cart.map((item) => (
               <div key={item.id} className="row">
-                <input disabled={true} type="text" className="col-3" value={item.id} />
-                <input disabled={true} type="text" value={item.title} className="col-5" />
+                <input disabled={true} type="text" className="col-sm-3" value={item.id} />
+                <input disabled={true} type="text" value={item.title} className="col-sm-5" />
                 <input
                   disabled={true}
                   type="text"
                   value={item.quantity}
-                  className="col-1 text-center"
+                  className="col-sm-1 text-center"
                 />
                 <input
                   disabled={true}
                   type="text"
                   value={`$${item.quantity * item.price}`}
-                  className="col-3 text-center"
+                  className="col-sm-3 text-center"
                 />
               </div>
             ))}
