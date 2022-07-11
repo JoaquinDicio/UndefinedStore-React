@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/UndefinedStore-React/static/css/main.0810c078.css",
+    "main.js": "/UndefinedStore-React/static/js/main.73f21d05.js",
+    "index.html": "/UndefinedStore-React/index.html",
+    "main.0810c078.css.map": "/UndefinedStore-React/static/css/main.0810c078.css.map",
+    "main.73f21d05.js.map": "/UndefinedStore-React/static/js/main.73f21d05.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0810c078.css",
+    "static/js/main.73f21d05.js"
+  ]
+}
