@@ -15,6 +15,7 @@ function App() {
         <MyContext>
           <NavBar />
           <Routes>
+            <Route path="/UndefinedStore-React" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/producto/:id" element={<ItemDetailContainer />} />
