@@ -5,7 +5,7 @@ export const CartContext = createContext(); //creates the cart context
 const { Provider } = CartContext; // destructuring the attribute provider of care Context
 
 export default function MyContext({ children }) {
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')));
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart'))||[]);
   //updates the local storage in every change
   useEffect(()=>{
     localStorage.setItem('cart',JSON.stringify(cart))
@@ -42,8 +42,10 @@ export default function MyContext({ children }) {
 
   function getLenght(){
     let tot=0
+    cart?
     cart.forEach((item)=>
     tot=tot+item.quantity)
+    :tot=0
     return tot
   }//gets the items quantity
 

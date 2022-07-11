@@ -1,8 +1,13 @@
-Hola lu, como va?  te envio la primera entrega del proycto final. Te hago una pequeña aclaracion:
-En el ItemListContainer tengo un useEffect que hace un fetch, yo puse para que vuelva a hacer el fetch cada vez que cambia el ID, pero no estoy seguro que eso sea lo mas optimo.
+Undefined store es un e-commerce de productos de informatica desarrollado como proyecto final para la cursada de 'React.js' en Coderhouse. 
 
-Probe poner los productos en un array aparte, que no sea el "productList" y usar un useEffect aparte, que monitoree el ID y ejecute la funcion "checkCategoria", y todo funcionaba bien, excepto por el primer click. El primer click nunca reaccionaba, porque se ve que no deteca el cambio en el ID. Ya que este todavia no existe cuando estas en Home. 
+Para poder correr el proyecto de forma correcta se necesitan las siguientes dependencias:
 
-Sin embargo si hago que el ID se monitoree en el primer useEffect, funciona perfecto. Lo cual para mi no tiene mucho sentido. Pero bueno, jajaja hice lo mejor que pude. 
+- BOOTSTRAP para todos los estilos y el diseño responsive del sitio. Es necesario tanto el JS como el CSS del mismo.
+- FIREBASE es necesario para poder acceder a la base de datos linkeada. En la que se almacenan las ordenes de compra, asi como tambien los productos. 
+- REACT ROUTER DOM para la navegacion entre pagina y pagina.
+- REACT ICONS para los iconos que se aprecian en la aplicacion, como por ejemplo el carrito de compras. 
+- TOASTIFY JS para los mensajes de error que se pueden apreciar al ingresar datos NO validos en la parte del Checkout.
+- Hay unas tipografias especificas linkeadas en el INDEX.HTML asi que se recomienda tener acceso a internet para poder visualizar las mismas. 
 
-PD la imagen del auricular quedo horrible, pero ya voy a buscar otra jajaja
+Como datos extra:
+El proyecto es completamente responsive, tiene local storage para poder almacenar los datos del carrito y valida los datos ingresados en el formulario del checkout. Ademas tiene un buscador para poder encontrar productos por nombre.

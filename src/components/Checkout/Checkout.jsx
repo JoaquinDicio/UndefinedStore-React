@@ -84,9 +84,9 @@ export default function Checkout() {
             <h2 className="text-center">Compra terminada</h2>
           </div>
           <div className="row">
-            <b className="col-md">Nombre:</b><p className="col">{name}</p>
-            <b className="col-md">Telefono:</b><p className="col">{cel}</p>
-            <b className="col-md">Mail:</b><p className="col">{email}</p>
+            <b className="">Nombre:</b><p className="col">{name}</p>
+            <b className="">Telefono:</b><p className="col">{cel}</p>
+            <b className="">Mail:</b><p className="col">{email}</p>
           </div>
           <div className="checkout-items">
             {cart.map((item) => (
